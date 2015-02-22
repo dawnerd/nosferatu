@@ -1,4 +1,4 @@
-var Boom = require('Boom');
+var Boom = require('boom');
 
 module.exports = {
   method: function(slug, url, next) {
