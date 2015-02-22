@@ -1,0 +1,6 @@
+mongo:
+  db: 'nosferatu'
+plugins:
+  good-mongodb-viewer:
+    searches:
+      Metrics: 'tags:metrics'
