@@ -3,9 +3,6 @@
   "version": "0.0.0",
   "description": "Node.js url shortener",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/dawnerd/nosferatu.git"
