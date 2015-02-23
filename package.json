@@ -4,7 +4,7 @@
   "description": "Node.js url shortener",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -22,17 +22,21 @@
   "homepage": "https://github.com/dawnerd/nosferatu",
   "dependencies": {
     "boom": "^2.6.1",
+    "confi": "^0.3.1",
+    "handlebars": "^3.0.0",
     "hapi": "^8.2.0",
     "hapi-auth-basic": "^2.0.0",
     "joi": "^5.1.0",
     "lodash": "^3.3.0",
     "mongoose": "^3.8.23",
-    "rapptor": "0.0.6",
     "require-all": "^1.0.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-set": "0.0.2",
     "grunt-set-rapptor": "0.0.8"
+  },
+  "engines": {
+    "node": "~0.12.0"
   }
 }
