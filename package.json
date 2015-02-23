@@ -1,6 +1,6 @@
 {
   "name": "nosferatu",
-  "version": "0.0.`",
+  "version": "0.0.1",
   "description": "Node.js url shortener",
   "main": "index.js",
   "repository": {
