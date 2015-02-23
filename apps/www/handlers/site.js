@@ -39,7 +39,12 @@ exports.home = {
   path: '/',
   method: 'get',
   handler: function(request, reply) {
-    reply('Oh, hi there');
+
+    if (process.env.ROOT_REDIRECT) {
+      reply.redirect(process.env.ROOT_REDIRECT).permanent(true);
+    } else {
+      reply('Oh, hi there');
+    }
   }
 };
 
