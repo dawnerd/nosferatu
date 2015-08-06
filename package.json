@@ -1,6 +1,6 @@
 {
   "name": "nosferatu",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Node.js url shortener",
   "main": "index.js",
   "repository": {
@@ -9,7 +9,8 @@
   },
   "keywords": [
     "url",
-    "shortener"
+    "shortener",
+    "short-link"
   ],
   "author": "Troy Whiteley",
   "license": "MIT",
