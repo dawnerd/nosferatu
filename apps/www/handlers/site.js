@@ -1,4 +1,5 @@
 var Joi = require('joi');
+var Boom = require('boom');
 
 exports.admin = {
   path: '/admin',
@@ -9,6 +10,23 @@ exports.admin = {
   handler: function(request, reply) {
     request.server.methods.getRedirect('test', function() {});
     reply.view('admin/index');
+  }
+};
+
+exports.apiListing = {
+  path: '/admin/listings.json',
+  method: 'get',
+  config: {
+    auth: 'simple'
+  },
+  handler: function(request, reply) {
+    request.server.methods.getRedirects(function(err, listings) {
+      if (err) {
+        return reply(Boom.internal(err));
+      }
+
+      reply(listings);
+    });
   }
 };
 
@@ -30,7 +48,29 @@ exports.add = {
         return reply(err);
       }
 
-      reply.redirect('/admin');
+      reply({success: true});
+    });
+  }
+};
+
+exports.remove = {
+  path: '/admin',
+  method: 'put',
+  config: {
+    auth: 'simple',
+    validate: {
+      payload: {
+        slug: Joi.string().required()
+      }
+    }
+  },
+  handler: function(request, reply) {
+    request.server.methods.removeRedirect(request.payload.slug, function(err) {
+      if (err) {
+        return reply(err);
+      }
+
+      reply({success: true});
     });
   }
 };
