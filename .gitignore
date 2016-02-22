@@ -31,3 +31,5 @@ db
 !apps/db
 
 public/_dist/
+
+.DS_Store

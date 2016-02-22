@@ -16,7 +16,7 @@ server.app.config = conf;
 
 var mongoUrl = 'mongodb://localhost:27017/'+conf.mongo.db;
 if (process.env.MONGO_URL) {
-  mongoUrl = process.env.MONGO_URL;
+  mongoUrl = process.env.MONGO_PORT_27017_TCP_ADDR + ':' + process.env.MONGO_PORT_27017_TCP_PORT + '/nosferatu';
 }
 
 var users = {
