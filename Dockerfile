@@ -1,3 +1,8 @@
 FROM node:0
 
-RUN node index.js
+ADD . /app
+WORKDIR /app
+
+RUN npm install
+
+CMD [ "node", "index.js" ]
